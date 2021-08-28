@@ -6,10 +6,12 @@ import SearchIcon from "@material-ui/icons/Search";
 import MailIcon from '@material-ui/icons/Mail';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import DrawerComp from '../Drawer/DrawerComp';
 
 const Header = () => {
     const classes = useStyles();
     const [anchorEl, setAnchorEl] = React.useState(null);
+    const [openDrawer, setopenDrawer] = React.useState(false);
 
     const isMenuOpen = Boolean(anchorEl);
     const menuId = 'primary-search-account-menu';
@@ -21,6 +23,14 @@ const Header = () => {
     const handleProfileMenuOpen = (event) => {
         setAnchorEl(event.currentTarget);
     };
+
+    const openUpDrawer = () => {
+        setopenDrawer(true)
+    }
+
+    const closeDrawer = () => {
+        setopenDrawer(false)
+    }
 
     const renderMenu = (
         <Menu
@@ -39,13 +49,14 @@ const Header = () => {
 
     return (
         <>
+            <DrawerComp state={openDrawer} close={closeDrawer} />
             <AppBar position="static" className={classes.header}>
                 <Toolbar>
                     <IconButton
                         edge="start"
                         className={classes.menuButton}
                         color="inherit"
-                        aria-label="open drawer"
+                        onClick={openUpDrawer}
                     >
                         <MenuIcon />
                     </IconButton>
