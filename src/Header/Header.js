@@ -1,28 +1,14 @@
 import React from 'react';
-import useStyles from './styles';
-import { AppBar, Toolbar, IconButton, Typography, Badge, Menu, MenuItem } from "@material-ui/core";
+import { AppBar, Toolbar, IconButton, Typography } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import MailIcon from '@material-ui/icons/Mail';
-import NotificationsIcon from '@material-ui/icons/Notifications';
-import AccountCircle from '@material-ui/icons/AccountCircle';
 import DrawerComp from '../Drawer/DrawerComp';
 import SearchBar from './SearchBar';
+import NavIcons from './NavIcons';
+import useStyles from './styles';
 
 const Header = () => {
     const classes = useStyles();
-    const [anchorEl, setAnchorEl] = React.useState(null);
     const [openDrawer, setopenDrawer] = React.useState(false);
-
-    const isMenuOpen = Boolean(anchorEl);
-    const menuId = 'primary-search-account-menu';
-
-    const handleMenuClose = () => {
-        setAnchorEl(null);
-    };
-
-    const handleProfileMenuOpen = (event) => {
-        setAnchorEl(event.currentTarget);
-    };
 
     const openUpDrawer = () => {
         setopenDrawer(true)
@@ -31,21 +17,6 @@ const Header = () => {
     const closeDrawer = () => {
         setopenDrawer(false)
     }
-
-    const renderMenu = (
-        <Menu
-            anchorEl={anchorEl}
-            anchorOrigin={{ vertical: 'top', horizontal: 'right' }}
-            id={menuId}
-            keepMounted
-            transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-            open={isMenuOpen}
-            onClose={handleMenuClose}
-        >
-            <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-            <MenuItem onClick={handleMenuClose}>My account</MenuItem>
-        </Menu>
-    );
 
     return (
         <>
@@ -64,31 +35,9 @@ const Header = () => {
                         LIBRARIA
                     </Typography>
                     <SearchBar />
-                    <div className={classes.icons}>
-                        <IconButton aria-label="show 4 new mails" color="inherit">
-                            <Badge badgeContent={4} color="secondary">
-                                <MailIcon />
-                            </Badge>
-                        </IconButton>
-                        <IconButton aria-label="show 17 new notifications" color="inherit">
-                            <Badge badgeContent={17} color="secondary">
-                                <NotificationsIcon />
-                            </Badge>
-                        </IconButton>
-                        <IconButton
-                            edge="end"
-                            aria-label="account of current user"
-                            aria-controls={menuId}
-                            aria-haspopup="true"
-                            onClick={handleProfileMenuOpen}
-                            color="inherit"
-                        >
-                            <AccountCircle />
-                        </IconButton>
-                    </div>
+                    <NavIcons />
                 </Toolbar>
             </AppBar>
-            {renderMenu}
         </>
     )
 }
