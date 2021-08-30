@@ -52,5 +52,27 @@ export default makeStyles((theme) => ({
         display: 'flex',
         width: "100%",
         justifyContent: "flex-end"
+    },
+    wrapper: {
+        display: 'flex',
+        width: "100%",
+        justifyContent: "flex-end",
+        alignItems: 'center',
+        marginLeft: 5,
+        '&>*': {
+            marginRight: 10,
+        }
+    },
+    button: {
+        width: '5ch',
+        color: '#fff',
+        backgroundColor: 'rgba(0,0,0, 0.2)',
+        '&:hover': {
+            backgroundColor: 'rgba(255,255,255, 0.1)',
+            boxShadow: '0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)'
+        },
+        [theme.breakpoints.up('sm')]: {
+            width: '15ch',
+        }
     }
 }))

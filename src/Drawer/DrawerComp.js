@@ -14,7 +14,6 @@ const useStyles = makeStyles({
 
 const DrawerComp = (props) => {
     const classes = useStyles();
-
     return (
         <Drawer open={props.state} onClose={props.close}>
             <div className={classes.list}>

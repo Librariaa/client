@@ -5,6 +5,7 @@ import DrawerComp from '../Drawer/DrawerComp';
 import SearchBar from './SearchBar';
 import NavIcons from './NavIcons';
 import useStyles from './styles';
+import NavButtons from './NavButtons';
 
 const Header = () => {
     const classes = useStyles();
@@ -35,7 +36,8 @@ const Header = () => {
                         LIBRARIA
                     </Typography>
                     <SearchBar />
-                    <NavIcons />
+                    <NavButtons />
+                    {/* <NavIcons /> */}
                 </Toolbar>
             </AppBar>
         </>
