@@ -3,7 +3,9 @@ import Header from './Header/Header';
 
 const App = () => {
   return (
-    <Header />
+    <>
+      <Header />
+    </>
   )
 }
 

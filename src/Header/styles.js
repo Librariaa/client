@@ -1,4 +1,4 @@
-import { makeStyles, alpha } from "@material-ui/core";
+import { makeStyles, alpha, FormHelperText } from "@material-ui/core";
 
 export default makeStyles((theme) => ({
     header: {
@@ -17,14 +17,11 @@ export default makeStyles((theme) => ({
         }
     },
     search: {
-        position: 'relative',
         borderRadius: theme.shape.borderRadius,
-        backgroundColor: alpha(theme.palette.common.white, 0.15),
-        '&:hover': {
-            backgroundColor: alpha(theme.palette.common.white, 0.25),
-        },
+        backgroundColor: '#158484',
         marginRight: theme.spacing(0),
         marginLeft: 0,
+        display: 'flex',
         width: '100%',
         [theme.breakpoints.up('sm')]: {
             marginLeft: theme.spacing(2),
@@ -32,10 +29,8 @@ export default makeStyles((theme) => ({
         }
     },
     searchIcon: {
-        padding: theme.spacing(0, 2),
+        padding: 5,
         height: '100%',
-        position: 'absolute',
-        pointerEvents: 'none',
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
@@ -46,7 +41,7 @@ export default makeStyles((theme) => ({
     inputInput: {
         padding: theme.spacing(1, 1, 1, 0),
         // vertical padding + font size from searchIcon
-        paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+        paddingLeft: `calc(1em + ${theme.spacing(0.5)}px)`,
         transition: theme.transitions.create('width'),
         width: '100%',
         [theme.breakpoints.up('md')]: {
