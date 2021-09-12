@@ -2,7 +2,6 @@ import React from 'react';
 import { AppBar, Toolbar, IconButton, Typography } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
 import DrawerComp from './Drawer/DrawerComp';
-import SearchBar from './SearchBar';
 import NavIcons from './NavIcons';
 import useStyles from './styles';
 import NavButtons from './NavButtons';
@@ -35,7 +34,6 @@ const Header = () => {
                     <Typography className={classes.title} variant="h6">
                         LIBRARIA
                     </Typography>
-                    <SearchBar />
                     <NavButtons />
                     {/* <NavIcons /> */}
                 </Toolbar>

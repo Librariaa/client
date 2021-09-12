@@ -10,23 +10,12 @@ export default makeStyles((theme) => ({
             marginRight: theme.spacing(2)
         }
     },
-    title: {
-        display: 'none',
-        [theme.breakpoints.up('sm')]: {
-            display: 'block',
-        }
-    },
     search: {
         borderRadius: theme.shape.borderRadius,
         backgroundColor: '#158484',
-        marginRight: theme.spacing(0),
-        marginLeft: 0,
+        margin: '5px auto',
         display: 'flex',
-        width: '100%',
-        [theme.breakpoints.up('sm')]: {
-            marginLeft: theme.spacing(2),
-            width: 'auto',
-        }
+        width: '70%'
     },
     searchIcon: {
         padding: 5,
@@ -36,23 +25,27 @@ export default makeStyles((theme) => ({
         justifyContent: 'center',
     },
     searchButton: {
-        padding: 0,
+        padding: '0 5',
         backgroundColor: 'inherit',
         color: '#fff',
-        border: 'none'
+        border: 'none',
+        '&:hover': {
+            backgroundColor: 'rgba(255,255,255, 0.1)',
+            color: '#fff',
+            cursor: "pointer"
+        }
     },
     inputRoot: {
         color: 'inherit',
+        width: '100%'
     },
     inputInput: {
         padding: theme.spacing(1, 1, 1, 0),
         // vertical padding + font size from searchIcon
-        paddingLeft: `calc(1em + ${theme.spacing(0.5)}px)`,
-        transition: theme.transitions.create('width'),
-        width: '100%',
-        [theme.breakpoints.up('md')]: {
-            width: '20ch',
-        }
+        paddingLeft: `calc(1em + ${theme.spacing(0.5)}px)`
+    },
+    title: {
+        fontFamily: ['Josefin Sans', 'sans-serif'].join(',')
     },
     icons: {
         display: 'flex',
@@ -63,10 +56,9 @@ export default makeStyles((theme) => ({
         display: 'flex',
         width: "100%",
         justifyContent: "flex-end",
-        alignItems: 'center',
         marginLeft: 5,
         '&>*': {
-            marginRight: 10,
+            marginLeft: 10,
         }
     },
     button: {

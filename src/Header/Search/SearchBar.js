@@ -1,5 +1,5 @@
 import React from 'react';
-import useStyle from './styles';
+import useStyle from '../styles';
 import SearchIcon from "@material-ui/icons/Search";
 import { InputBase } from '@material-ui/core';
 
