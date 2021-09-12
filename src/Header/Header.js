@@ -36,8 +36,8 @@ const Header = () => {
                         LIBRARIA
                     </Typography>
                     <SearchBar />
-                    <NavButtons />
-                    {/* <NavIcons /> */}
+                    {/* <NavButtons /> */}
+                    <NavIcons />
                 </Toolbar>
             </AppBar>
         </>
