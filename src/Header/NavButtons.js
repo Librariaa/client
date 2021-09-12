@@ -18,7 +18,7 @@ const NavButtons = () => {
                 variant="contained"
                 disableElevation
             >
-                Sign Up
+                SignUp
             </Button>
         </Box>
     )
