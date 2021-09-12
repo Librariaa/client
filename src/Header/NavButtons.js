@@ -1,6 +1,5 @@
 import React from 'react';
-import { Badge, Box, Button, Typography } from '@material-ui/core';
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
+import { Box, Button } from '@material-ui/core';
 import useStyles from './styles';
 
 const NavButtons = () => {
@@ -14,12 +13,13 @@ const NavButtons = () => {
             >
                 Login
             </Button>
-            <Box display="flex">
-                <Badge badgeContent={3} color='primary'>
-                    <ShoppingCartIcon />
-                </Badge>
-                <Typography style={{ marginLeft: 10 }}>Cart</Typography>
-            </Box>
+            <Button
+                className={classes.button}
+                variant="contained"
+                disableElevation
+            >
+                Sign Up
+            </Button>
         </Box>
     )
 }

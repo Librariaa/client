@@ -1,7 +1,7 @@
 import React from 'react';
 import { AppBar, Toolbar, IconButton, Typography } from "@material-ui/core";
 import MenuIcon from "@material-ui/icons/Menu";
-import DrawerComp from '../Drawer/DrawerComp';
+import DrawerComp from './Drawer/DrawerComp';
 import SearchBar from './SearchBar';
 import NavIcons from './NavIcons';
 import useStyles from './styles';
@@ -21,7 +21,7 @@ const Header = () => {
 
     return (
         <>
-            <DrawerComp state={openDrawer} close={closeDrawer} />
+            <DrawerComp state={openDrawer} close={closeDrawer} open={(value) => { setopenDrawer(value) }} />
             <AppBar position="static" className={classes.header}>
                 <Toolbar>
                     <IconButton
@@ -36,8 +36,8 @@ const Header = () => {
                         LIBRARIA
                     </Typography>
                     <SearchBar />
-                    {/* <NavButtons /> */}
-                    <NavIcons />
+                    <NavButtons />
+                    {/* <NavIcons /> */}
                 </Toolbar>
             </AppBar>
         </>

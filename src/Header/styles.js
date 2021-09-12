@@ -35,6 +35,12 @@ export default makeStyles((theme) => ({
         alignItems: 'center',
         justifyContent: 'center',
     },
+    searchButton: {
+        padding: 0,
+        backgroundColor: 'inherit',
+        color: '#fff',
+        border: 'none'
+    },
     inputRoot: {
         color: 'inherit',
     },
@@ -65,10 +71,11 @@ export default makeStyles((theme) => ({
     },
     button: {
         width: '5ch',
-        color: '#fff',
-        backgroundColor: 'rgba(0,0,0, 0.2)',
+        color: '#2AA3A3',
+        backgroundColor: '#fff',
         '&:hover': {
             backgroundColor: 'rgba(255,255,255, 0.1)',
+            color: '#fff',
             boxShadow: '0px 3px 1px -2px rgb(0 0 0 / 20%), 0px 2px 2px 0px rgb(0 0 0 / 14%), 0px 1px 5px 0px rgb(0 0 0 / 12%)'
         },
         [theme.breakpoints.up('sm')]: {

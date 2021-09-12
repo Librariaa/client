@@ -1,8 +1,8 @@
 import React from 'react';
-import { IconButton, Badge, Menu, MenuItem } from '@material-ui/core';
-import MailIcon from '@material-ui/icons/Mail';
+import { Box, IconButton, Badge, Menu, MenuItem, Typography } from '@material-ui/core';
 import NotificationsIcon from '@material-ui/icons/Notifications';
 import AccountCircle from '@material-ui/icons/AccountCircle';
+import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import useStyles from './styles';
 
 const NavIcons = () => {
@@ -39,23 +39,25 @@ const NavIcons = () => {
     return (
         <>
             <div className={classes.icons}>
-                <IconButton aria-label="show 4 new mails" color="inherit">
-                    <Badge badgeContent={4} color="secondary">
-                        <MailIcon />
-                    </Badge>
-                </IconButton>
-                <IconButton aria-label="show 17 new notifications" color="inherit">
-                    <Badge badgeContent={17} color="secondary">
+                <IconButton color="inherit">
+                    <Badge badgeContent={17} color="primary">
                         <NotificationsIcon />
                     </Badge>
                 </IconButton>
+                <Box display="flex">
+                    <IconButton color="inherit">
+                        <Badge badgeContent={3} color="primary">
+                            <ShoppingCartIcon />
+                        </Badge>
+                        <Typography style={{ marginLeft: 10 }}>Cart</Typography>
+                    </IconButton>
+                </Box>
                 <IconButton
+                    color="inherit"
                     edge="end"
-                    aria-label="account of current user"
                     aria-controls={menuId}
                     aria-haspopup="true"
                     onClick={handleProfileMenuOpen}
-                    color="inherit"
                 >
                     <AccountCircle />
                 </IconButton>

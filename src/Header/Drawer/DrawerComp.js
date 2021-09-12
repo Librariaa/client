@@ -1,5 +1,5 @@
 import React from 'react';
-import { Drawer, List, Divider, ListItem, ListItemIcon, ListItemText, makeStyles } from '@material-ui/core';
+import { SwipeableDrawer, List, Divider, ListItem, ListItemIcon, ListItemText, makeStyles } from '@material-ui/core';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
 
@@ -15,7 +15,7 @@ const useStyles = makeStyles({
 const DrawerComp = (props) => {
     const classes = useStyles();
     return (
-        <Drawer open={props.state} onClose={props.close}>
+        <SwipeableDrawer open={props.state} onClose={props.close} onOpen={() => props.open(true)}>
             <div className={classes.list}>
                 <List>
                     {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
@@ -35,7 +35,7 @@ const DrawerComp = (props) => {
                     ))}
                 </List>
             </div>
-        </Drawer>
+        </SwipeableDrawer>
     );
 }
 
